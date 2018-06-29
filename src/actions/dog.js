@@ -49,12 +49,7 @@ export const adoptDog = () => dispatch => {
   dispatch(adoptDogRequest());
   return (
     fetch(`${petApi}/dogs`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': petApi
-      }
-    })
+      method: 'DELETE'})
       .then(response => {
         return response.json();
       })

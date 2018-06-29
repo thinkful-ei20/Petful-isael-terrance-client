@@ -9,7 +9,7 @@ export class Dashboard extends React.Component{
   }
   componentDidMount(){
     this.props.dispatch(fetchCat());
-    // this.props.dispatch(fetchDog())
+    this.props.dispatch(fetchDog());
   }
 
   adoptCat(){
