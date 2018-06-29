@@ -1,12 +1,13 @@
 
 import {
-  fetchCat, 
-  adoptCat, 
-  FETCH_CAT_REQUEST, 
-  FETCH_CAT_SUCCESS, 
-  FETCH_CAT_ERROR, 
-  ADOPT_CAT_REQUEST, 
-  ADOPT_CAT_ERROR
+  fetchCat,
+  adoptCat,
+  FETCH_CAT_REQUEST,
+  FETCH_CAT_SUCCESS,
+  FETCH_CAT_ERROR,
+  ADOPT_CAT_REQUEST,
+  ADOPT_CAT_ERROR,
+  ADOPT_CAT_SUCCESS
 } from '../actions/cat';
 
 
@@ -36,6 +37,11 @@ const catReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.error
+      }
+    case ADOPT_CAT_SUCCESS:
+      return {
+        ...state,
+        loading: false
       }
     case ADOPT_CAT_REQUEST:
       return {
