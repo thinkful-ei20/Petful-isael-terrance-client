@@ -1,5 +1,39 @@
-import {fetchCat, adoptCat} from './cat';
-import {fetchDog, adoptDog} from './dog';
+import { 
+  fetchCat, 
+  adoptCat,
+  FETCH_CAT_REQUEST, 
+  FETCH_CAT_SUCCESS, 
+  FETCH_CAT_ERROR, 
+  ADOPT_CAT_SUCCESS, 
+  ADOPT_CAT_REQUEST, 
+  ADOPT_CAT_ERROR } from './cat';
+import { 
+  fetchDog, 
+  adoptDog,
+  FETCH_DOG_REQUEST, 
+  FETCH_DOG_SUCCESS, 
+  FETCH_DOG_ERROR, 
+  ADOPT_DOG_SUCCESS, 
+  ADOPT_DOG_REQUEST, 
+  ADOPT_DOG_ERROR } from './dog';
 
-export {fetchCat, adoptCat};
-export {fetchDog, adoptDog};
+export { 
+  fetchCat, 
+  adoptCat, 
+  FETCH_CAT_REQUEST, 
+  FETCH_CAT_SUCCESS, 
+  FETCH_CAT_ERROR, 
+  ADOPT_CAT_SUCCESS, 
+  ADOPT_CAT_REQUEST, 
+  ADOPT_CAT_ERROR };
+
+export { 
+  fetchDog, 
+  adoptDog,
+  FETCH_DOG_REQUEST, 
+  FETCH_DOG_SUCCESS, 
+  FETCH_DOG_ERROR, 
+  ADOPT_DOG_SUCCESS, 
+  ADOPT_DOG_REQUEST, 
+  ADOPT_DOG_ERROR
+ };
