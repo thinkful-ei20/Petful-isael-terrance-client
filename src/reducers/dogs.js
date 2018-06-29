@@ -25,7 +25,7 @@ const dogReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: action.loading,
-        data: action.data
+        data: action.dog
       }
     case FETCH_DOG_ERROR:
       return {

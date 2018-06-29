@@ -45,7 +45,7 @@ export const fetchCat = () => dispatch => {
       .then(res => {
         dispatch(fetchCatSuccess(res));
       })
-  )
+  );
 };
 
 export const adoptCat = () => dispatch => {
@@ -62,4 +62,4 @@ export const adoptCat = () => dispatch => {
         dispatch(fetchCat());
       })
   );
-}
+};

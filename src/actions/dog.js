@@ -1,9 +1,10 @@
-'use strict';
+
 import petApi from '../config';
 
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS';
-export const fetchDogSuccess = () => ({
+export const fetchDogSuccess = (dog) => ({
   type: FETCH_DOG_SUCCESS,
+  dog
 });
 
 export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
@@ -12,8 +13,9 @@ export const fetchDogRequest = () => ({
 });
 
 export const FETCH_DOG_ERROR = 'FETCH_DOG_ERROR';
-export const fetchDogError = () => ({
+export const fetchDogError = (error) => ({
   type: FETCH_DOG_ERROR,
+  error
 });
 
 export const ADOPT_DOG_SUCCESS = 'ADOPT_DOG_SUCCESS';
@@ -22,8 +24,9 @@ export const adoptDogSuccess = () => ({
 });
 
 export const ADOPT_DOG_ERROR = 'ADOPT_DOG_ERROR';
-export const adoptDogError = () => ({  
+export const adoptDogError = (error) => ({  
   type: ADOPT_DOG_ERROR,
+  error
 });
 
 export const ADOPT_DOG_REQUEST = 'ADOPT_DOG_REQUEST';
@@ -31,19 +34,19 @@ export const adoptDogRequest = () => ({
   type: ADOPT_DOG_REQUEST,
 });
 
-export const fetchDog = () => {
+export const fetchDog = () => dispatch => {
+  dispatch(fetchDogRequest());
   return (
-    fetch(`${petApi}/dogs`,)
-    .then(response => {
-      return response.json();
-    })
-    .then(res => {
-      console.log(res);
-    })
-  )
+    fetch(`${petApi}/dogs`)
+      .then(response => {
+        return response.json();
+      })
+      .then(res => dispatch(fetchDogSuccess(res)))
+  );
 };
 
-export const adoptDog = () => {
+export const adoptDog = () => dispatch => {
+  dispatch(adoptDogRequest());
   return (
     fetch(`${petApi}/dogs`, {
       method: 'DELETE',
@@ -52,11 +55,12 @@ export const adoptDog = () => {
         'Access-Control-Allow-Origin': petApi
       }
     })
-    .then(response => {
-      return response.json();
-    })
-    .then(res => {
-      console.log(res);
-    })
+      .then(response => {
+        return response.json();
+      })
+      .then(() => {
+        dispatch(adoptDogSuccess());
+        dispatch(fetchDog());
+      })
   );
-}
+};

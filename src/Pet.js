@@ -17,8 +17,8 @@ export default function Pet(props) {
         <dd>{props.pet.story}</dd>
       </dl>
       <button onClick={props.onAdopt}>Adopt</button>
-    </article>
+    </article>;
   } else {
-    return <div>LOADING</div>
+    return <div>LOADING</div>;
   }
 }
