@@ -33,13 +33,7 @@ export const adoptDogRequest = () => ({
 
 export const fetchDog = () => {
   return (
-    fetch(`${petApi}/dogs`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': petApi
-      }
-    })
+    fetch(`${petApi}/dogs`,)
     .then(response => {
       return response.json();
     })

@@ -30,31 +30,26 @@ export const adoptCatRequest = () => ({
 
 
 export const ADOPT_CAT_ERROR = 'ADOPT_CAT_ERROR';
-export const adoptCatError = () => ({
+export const adoptCatError = (error) => ({
   type: ADOPT_CAT_ERROR,
+  error
 });
 
-export const fetchCat = () => {
-  fetchCatRequest();
+export const fetchCat = () => dispatch => {
+  // fetchCatRequest();
   return (
-    fetch(`${petApi}/cats`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': petApi
-      }
-    })
+    fetch(`${petApi}/cats`)
       .then(response => {
         return response.json();
       })
       .then(res => {
-        console.log(res);
+        dispatch(fetchCatSuccess(res));
       })
   )
 };
 
-export const adoptCat = () => {
-  adoptCatRequest();
+export const adoptCat = () => dispatch => {
+  dispatch(adoptCatRequest());
   return (
     fetch(`${petApi}/cats`, {
       method: 'DELETE',
@@ -67,7 +62,7 @@ export const adoptCat = () => {
         return response.json();
       })
       .then(res => {
-        console.log(res);
+        console.log('hello')
       })
   );
 }

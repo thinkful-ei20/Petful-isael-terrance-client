@@ -7,6 +7,7 @@ import {
   ADOPT_CAT_SUCCESS, 
   ADOPT_CAT_REQUEST, 
   ADOPT_CAT_ERROR } from './cat';
+  
 import { 
   fetchDog, 
   adoptDog,
