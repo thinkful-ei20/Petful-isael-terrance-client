@@ -1,4 +1,4 @@
-
+import * from './actions/index';
 
 
 'use strict';
