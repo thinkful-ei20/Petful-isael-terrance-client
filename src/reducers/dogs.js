@@ -42,8 +42,7 @@ const dogReducer = (state = initialState, action) => {
     case ADOPT_DOG_SUCCESS:
       return {
         ...state,
-        loading: action.loading,
-        data: action.data
+        loading: false,
       }
     case ADOPT_DOG_ERROR:
       return {

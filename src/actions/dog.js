@@ -49,11 +49,12 @@ export const adoptDog = () => dispatch => {
   dispatch(adoptDogRequest());
   return (
     fetch(`${petApi}/dogs`, {
-      method: 'DELETE'})
+      method: 'DELETE'}
+    )
       .then(response => {
         return response.json();
       })
-      .then(() => {
+      .then((res) => {
         dispatch(adoptDogSuccess());
         dispatch(fetchDog());
       })
