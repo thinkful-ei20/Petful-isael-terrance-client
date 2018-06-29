@@ -1,7 +1,5 @@
-import {fetchCat, adoptCat} from './actions/cat';
-import {fetchDog, adoptDog} from './actions/dog';
+import {fetchCat, adoptCat} from './cat';
+import {fetchDog, adoptDog} from './dog';
 
-export const fetchDog  = fetchDog;
-export adoptDog;
-export fetchCat;
-export adoptCat;
+export {fetchCat, adoptCat};
+export {fetchDog, adoptDog};
