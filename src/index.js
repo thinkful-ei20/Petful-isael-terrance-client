@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Dashboard from './Dashboard';
+import store from './store';
 
 let catData = {
   "imageURL": "https://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-cat-photos-funny-cover.jpg",
@@ -25,5 +26,7 @@ let dogData = {
   "story": "Owners thought he can support himself since hes all grown up"
 };
 
-ReactDOM.render(<Dashboard catData={catData} dogData={dogData}/>, document.getElementById('root'));
+console.log(store.getState());
+
+ReactDOM.render(<Dashboard store={store} catData={catData} dogData={dogData}/>, document.getElementById('root'));
 registerServiceWorker();
