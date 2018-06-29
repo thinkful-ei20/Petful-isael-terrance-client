@@ -1,4 +1,14 @@
-import * from './actions/index';
+
+import {
+  fetchCat, 
+  adoptCat, 
+  FETCH_CAT_REQUEST, 
+  FETCH_CAT_SUCCESS, 
+  FETCH_CAT_ERROR, 
+  ADOPT_CAT_SUCCESS, 
+  ADOPT_CAT_REQUEST, 
+  ADOPT_CAT_ERROR
+} from '../actions/cat';
 
 
 'use strict';
@@ -46,6 +56,7 @@ const catReducer = (state = initialState, action) => {
         error: action.error
       }
   }
+  return state;
 };
 
 export default catReducer;

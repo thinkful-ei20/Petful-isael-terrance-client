@@ -6,6 +6,10 @@ export const fetchDogSuccess = () => ({
   type: FETCH_DOG_SUCCESS,
 });
 
+export const FETCH_DOG_REQUEST = 'FETCH_DOG_REQUEST';
+export const fetchDogRequest = () => ({
+  type: FETCH_DOG_REQUEST,
+});
 
 export const FETCH_DOG_ERROR = 'FETCH_DOG_ERROR';
 export const fetchDogError = () => ({
@@ -20,6 +24,11 @@ export const adoptDogSuccess = () => ({
 export const ADOPT_DOG_ERROR = 'ADOPT_DOG_ERROR';
 export const adoptDogError = () => ({  
   type: ADOPT_DOG_ERROR,
+});
+
+export const ADOPT_DOG_REQUEST = 'ADOPT_DOG_REQUEST';
+export const adoptDogRequest = () => ({
+  type: ADOPT_DOG_REQUEST,
 });
 
 export const fetchDog = () => {
