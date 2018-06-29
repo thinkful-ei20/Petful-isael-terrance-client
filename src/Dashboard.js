@@ -1,5 +1,6 @@
 import React from 'react';
 import Pet from './Pet';
+import {fetchCat, adoptCat, fetchDog, adoptDog} from './actions/index';
 
 export default class Dashboard extends React.Component{
   constructor(props){
@@ -14,10 +15,10 @@ export default class Dashboard extends React.Component{
     return <section>
       <Pet 
         pet={this.props.catData} 
-        adopt={() => this.onAdoptPet()}/>
+        adopt={() => fetchCat()}/>
       <Pet 
         pet={this.props.dogData}
-        adopt={() => this.onAdoptPet()} />
+        adopt={() => fetchDog()} />
     </section>;
   }
 }
