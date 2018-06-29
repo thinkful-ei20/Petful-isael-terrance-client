@@ -2,7 +2,7 @@ import React from 'react';
 import { adoptCat, adoptDog } from './actions/index';
 export default function Pet(props) {
   if (props.pet !== null) {
-    let adoptPet = props.adopt === 'cat' ? adoptCat : adoptDog;
+    // let adoptPet = props.adopt === 'cat' ? adoptCat : adoptDog;
     return <article>
       <img src={props.pet.imageURL} alt={props.pet.imageDescription} />
       <h2>{props.pet.name}</h2>
@@ -16,7 +16,7 @@ export default function Pet(props) {
         <dt>story</dt>
         <dd>{props.pet.story}</dd>
       </dl>
-      <button onClick={() => adoptPet()}>Adopt</button>
+      <button onClick={props.onAdopt}>Adopt</button>
     </article>
   } else {
     return <div>LOADING</div>

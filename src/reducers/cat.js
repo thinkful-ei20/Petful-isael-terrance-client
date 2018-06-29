@@ -5,7 +5,6 @@ import {
   FETCH_CAT_REQUEST, 
   FETCH_CAT_SUCCESS, 
   FETCH_CAT_ERROR, 
-  ADOPT_CAT_SUCCESS, 
   ADOPT_CAT_REQUEST, 
   ADOPT_CAT_ERROR
 } from '../actions/cat';
@@ -42,13 +41,6 @@ const catReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true
-      }
-    case ADOPT_CAT_SUCCESS:
-      return {
-        ...state,
-        data: action.data,
-        loading: false,
-        error: null
       }
     case ADOPT_CAT_ERROR:
       return {

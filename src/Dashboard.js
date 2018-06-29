@@ -12,15 +12,23 @@ export class Dashboard extends React.Component{
     // this.props.dispatch(fetchDog())
   }
 
+  adoptCat(){
+    this.props.dispatch(adoptCat());
+  }
+
+  adoptDog(){
+    this.props.dispatch(adoptDog());
+  }
+
   render(){
     // console.log(this.props.cat.age)
     return <section>
       <Pet 
         pet={this.props.cat} 
-        adopt={'cat'}/>
+        onAdopt={this.adoptCat.bind(this)}/>
       <Pet 
         pet={this.props.dog}
-        adopt={'dog'} />
+        onAdopt={this.adoptDog.bind(this)} />
     </section>;
   }
 }
