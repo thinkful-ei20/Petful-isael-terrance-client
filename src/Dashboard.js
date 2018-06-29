@@ -3,32 +3,32 @@ import React from 'react';
 export default function Dashboard(props) {
   return <section>
     <article>
-      <img src='https://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-cat-photos-funny-cover.jpg' alt='Heavy orange bengal cat'/>
-      <h2>Lardy</h2>
+      <img src={props.catData.imageURL} alt={props.catData.imageDescription}/>
+      <h2>{props.catData.name}</h2>
       <dl>
         <dt>sex</dt>
-        <dd>male</dd>
+        <dd>{props.catData.sex}</dd>
         <dt>age</dt>
-        <dd>4</dd>
+        <dd>{props.catData.age}</dd>
         <dt>breed</dt>
-        <dd>Bengal</dd>
+        <dd>{props.catData.breed}</dd>
         <dt>story</dt>
-        <dd>Ate too much</dd>
+        <dd>{props.catData.story}</dd>
       </dl>
       <button>Adopt</button>
     </article>
     <article>
-    <img src="https://i.imgur.com/yXDNi58.jpg"/>
-      <h2>Lardy</h2>
+      <img src={props.dogData.imageURL} alt={props.catData.imageDescription}/>
+      <h2>{props.dogData.name}</h2>
       <dl>
         <dt>sex</dt>
-        <dd>male</dd>
+        <dd>{props.dogData.sex}</dd>
         <dt>age</dt>
-        <dd>4</dd>
+        <dd>{props.dogData.age}</dd>
         <dt>breed</dt>
-        <dd>Bengal</dd>
+        <dd>{props.dogData.breed}</dd>
         <dt>story</dt>
-        <dd>Ate too much</dd>
+        <dd>{props.dogData.story}</dd>
       </dl>
       <button>Adopt</button>
     </article>
