@@ -38,7 +38,12 @@ export const adoptCatError = (error) => ({
 export const fetchCat = () => dispatch => {
   dispatch(fetchCatRequest());
   return (
-    fetch(`${petApi}/cats`)
+    fetch(`${petApi}/cats`,{
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': petApi
+    }
+    })
       .then(response => {
         return response.json();
       })
@@ -52,7 +57,11 @@ export const adoptCat = () => dispatch => {
   dispatch(adoptCatRequest());
   return (
     fetch(`${petApi}/cats`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': petApi
+    }
     })
       .then(response => {
         return response.json();

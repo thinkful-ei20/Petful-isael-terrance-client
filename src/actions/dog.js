@@ -37,7 +37,12 @@ export const adoptDogRequest = () => ({
 export const fetchDog = () => dispatch => {
   dispatch(fetchDogRequest());
   return (
-    fetch(`${petApi}/dogs`)
+    fetch(`${petApi}/dogs`,{
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': petApi
+    }
+    })
       .then(response => {
         return response.json();
       })
@@ -49,7 +54,11 @@ export const adoptDog = () => dispatch => {
   dispatch(adoptDogRequest());
   return (
     fetch(`${petApi}/dogs`, {
-      method: 'DELETE'}
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': petApi
+    }}
     )
       .then(response => {
         return response.json();
